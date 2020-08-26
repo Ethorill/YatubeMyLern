@@ -1,0 +1,16 @@
+{% extends "extends/base.html" %}
+{% block title %} {{ post.title }} {% endblock %}
+{% block header %}{% endblock %}
+{% block content %}
+<main role="main" class="container">
+    <div class="d-flex flex-row">
+        {% include "includes/user_card.html" with paginator=post_count users=post.author %}
+        <div class="d-flex flex-column w-100">
+            {% include "includes/single_post_card.html" %}
+            {% include "includes/comments.html" with items=comments %}
+
+        </div>
+    </div>
+</main>
+
+{% endblock %}

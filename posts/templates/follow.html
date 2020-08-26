@@ -1,0 +1,27 @@
+{% extends "extends/base.html" %}
+{% block title %} Ваши любимые пользователи ❤ {% endblock %}
+{% block content %}
+<!-- Ну includes же не нужен?, всего то 2 шаблона дублированны не критично =) -->
+
+<div class="container">
+    {% include "includes/menu.html" with index=True %}
+    <!-- Вывод ленты записей -->
+    <h1> Ваши любимые пользователи ❤</h1>
+    <!--Кэш-->
+
+    {% for post in page %}
+
+    {% include "includes/post_item.html" with post=post %}
+
+    {% endfor %}
+
+
+</div>
+
+
+<!-- Вывод паджинатора -->
+{% if page.has_other_pages %}
+{% include "includes/paginator.html" with items=page paginator=paginator%}
+{% endif %}
+
+{% endblock %}

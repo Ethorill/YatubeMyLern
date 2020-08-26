@@ -1,0 +1,5 @@
+{% extends "extends/post_extends_form.html" %}
+
+{% block head %}Редактировать запись{% endblock %}
+{% block action_form %}{% url 'post_edit' post.author.username post.id %}{% endblock %}
+{% block button %}Сохранить{% endblock %}

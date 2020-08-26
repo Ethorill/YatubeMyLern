@@ -1,0 +1,8 @@
+pytest-django==3.8.0
+Django
+django-debug-toolbar~=2.2
+pillow==7.0.0
+sorl-thumbnail==12.6.3
+PyMySQL
+python-dotenv
+
